@@ -1,4 +1,5 @@
 from pathlib import Path 
+from scanner import scan_dir
 
 def main():
     
@@ -18,9 +19,13 @@ def main():
     
     print("Файлы в папке: ")
 
+    print("сканер")
     for item in p.iterdir():
         if item.is_file():
             print(item)
+        
+
+    scan_dir(p)
 
 
 if __name__ == "__main__":
