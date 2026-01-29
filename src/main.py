@@ -1,6 +1,6 @@
 from pathlib import Path 
-from scanner import scan_dir
-
+from scanner import iter_files
+from features import score_file
 def main():
     
     print("Veles запущен")
@@ -20,12 +20,13 @@ def main():
     print("Файлы в папке: ")
 
     print("сканер")
-    for item in p.iterdir():
-        if item.is_file():
-            print(item)
+    for item in iter_files(p):
+        score = score_file(item)
+        if score > 0:
+            print(score, item)
         
 
-    scan_dir(p)
+    iter_files(p)
 
 
 if __name__ == "__main__":
