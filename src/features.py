@@ -80,7 +80,7 @@ def score_file(path: Path):
 
     if  ext in Rules:
         score = score + Rules[ext]
-        reasons.append(f"OПАСНОЕ РАСШИРЕНИЕ!!!: {ext} (+{Rules[ext]})")
+        reasons.append(f"Расширение: {ext} (+{Rules[ext]})")
     info = is_double_exts(path)
     if info:
         prev, last = info
