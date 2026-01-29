@@ -21,9 +21,11 @@ def main():
 
     print("сканер")
     for item in iter_files(p):
-        score = score_file(item)
-        if score > 0:
+        score, reasons = score_file(item)
+        if score > 30:
             print(score, item)
+            for r in reasons:
+                print ("  -",r)
         
 
     iter_files(p)
